@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – Einfach Anfrage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --champagne: #C9A96E;
+      --ivory: #FAF7F2;
+      --dark: #1A1A1A;
+      --grey-border: #E2DDD6;
+      --grey-mid: #8A8580;
+      --grey-light: #F0EDE8;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ivory);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,247,242,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--grey-border);
+      padding: 0 5vw;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; font-weight: 500;
+      color: var(--dark); text-decoration: none;
+    }
+    .nav-logo span { color: var(--champagne); }
+    .nav-back {
+      font-size: 13px; color: var(--grey-mid);
+      text-decoration: none; transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--dark); }
+    .page-wrap {
+      max-width: 680px;
+      margin: 72px auto;
+      padding: 0 5vw;
+    }
+    .eyebrow {
+      font-size: 11px; font-weight: 600; color: var(--champagne);
+      text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 12px;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px; font-weight: 400; line-height: 1.1;
+      color: var(--dark); margin-bottom: 48px;
+    }
+    h2 {
+      font-size: 13px; font-weight: 600; color: var(--dark);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin: 36px 0 10px;
+    }
+    p { color: var(--grey-mid); margin-bottom: 8px; }
+    a { color: var(--champagne); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .divider { height: 1px; background: var(--grey-border); margin: 48px 0; }
+    footer {
+      border-top: 1px solid var(--grey-border);
+      padding: 28px 5vw;
+      text-align: center;
+      font-size: 12px; color: var(--grey-mid);
+    }
+    footer a { color: var(--grey-mid); margin: 0 10px; }
+    footer a:hover { color: var(--champagne); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Einfach<span>Anfrage</span></a>
+    <a href="/" class="nav-back">← Zurück zur Website</a>
+  </nav>
+
+  <div class="page-wrap">
+    <div class="eyebrow">Rechtliches</div>
+    <h1>Impressum</h1>
+
+    <h2>Angaben gemäß § 5 TMG</h2>
+    <p>Sandra Holm<br>Einfach Anfrage<br>Wielandstr. 11<br>12159 Berlin</p>
+
+    <h2>Kontakt</h2>
+    <p>E-Mail: <a href="mailto:einfachanfrage@outlook.com">einfachanfrage@outlook.com</a></p>
+
+    <div class="divider"></div>
+
+    <h2>Hinweis zur Streitschlichtung</h2>
+    <p>
+      Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+      <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>
+    </p>
+    <p>
+      Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+      Verbraucherschlichtungsstelle teilzunehmen.
+    </p>
+  </div>
+
+  <footer>
+    <a href="/">Startseite</a>
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutz</a>
+  </footer>
+
+</body>
+</html>
