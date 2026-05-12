@@ -7,7 +7,7 @@
   <meta name="description" content="Deine Kunden liefern dir alles was du brauchst – bevor du auch nur eine E-Mail schreibst. Das smarte Anfrage-Widget für Hochzeitsfotografen.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231A1A1A'/><text x='16' y='22' font-family='Georgia,serif' font-size='14' font-weight='500' fill='%23C9A96E' text-anchor='middle'>ea</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -308,8 +308,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
       flex-shrink: 0;
+      color: var(--champagne);
     }
 
     .promise-text strong {
@@ -343,7 +343,7 @@
       padding: 28px 24px;
     }
 
-    .pain-icon { font-size: 28px; margin-bottom: 16px; }
+    .pain-icon { margin-bottom: 16px; color: var(--champagne); line-height: 0; }
 
     .pain-card h3 {
       font-family: 'Cormorant Garamond', serif;
@@ -585,6 +585,72 @@
       color: rgba(250,247,242,0.2);
     }
 
+    /* ── Design-Tabs ── */
+    .design-tabs {
+      display: flex; gap: 8px; justify-content: center;
+      margin-bottom: 36px; flex-wrap: wrap;
+    }
+    .design-tab {
+      padding: 9px 22px; border-radius: 100px;
+      border: 1.5px solid rgba(250,247,242,0.15);
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500;
+      color: rgba(250,247,242,0.35); cursor: pointer;
+      transition: all 0.2s; background: transparent;
+    }
+    .design-tab.active {
+      background: rgba(250,247,242,0.08);
+      border-color: rgba(250,247,242,0.4);
+      color: #FAF7F2;
+    }
+    .design-tab[data-design="champagne"].active { border-color: #C9A96E; color: #C9A96E; background: rgba(201,169,110,0.1); }
+    .design-tab[data-design="nacht"].active     { border-color: #C9927A; color: #C9927A; background: rgba(201,146,122,0.1); }
+    .design-tab[data-design="sage"].active      { border-color: #7A9E7E; color: #7A9E7E; background: rgba(122,158,126,0.1); }
+    .design-preview { max-width: 360px; margin: 0 auto 72px; }
+
+    /* ── Nacht – dunkel, kantig, Playfair Display ── */
+    .dk-nacht { background: #1A1A1C !important; }
+    .mk.dk-nacht { border-radius: 6px !important; }
+    .dk-nacht .mk-bar { background: #C9927A !important; height: 2px !important; }
+    .dk-nacht .mk-logo { color: #C9927A !important; font-family: 'Playfair Display', serif !important; text-transform: uppercase !important; letter-spacing: 0.2em !important; font-size: 9px !important; }
+    .dk-nacht .mk-step { color: #3A3A3E !important; font-family: 'Inter', sans-serif !important; }
+    .dk-nacht .mk-title { color: #F0EDE8 !important; font-family: 'Playfair Display', serif !important; font-size: 18px !important; letter-spacing: 0.01em !important; }
+    .dk-nacht .mk-sub, .dk-nacht .mk-lbl { color: #4A4850 !important; letter-spacing: 0.12em !important; }
+    .dk-nacht .mk-field { background: #232325 !important; border-color: transparent !important; border-radius: 3px !important; color: #F0EDE8 !important; }
+    .dk-nacht .mk-field.sel { border-color: #C9927A !important; background: rgba(201,146,122,0.1) !important; color: #D4A090 !important; }
+    .dk-nacht .mk-field.filled { border-color: #C9927A !important; background: #232325 !important; color: #F0EDE8 !important; }
+    .dk-nacht .mk-check { background: #232325; border-color: transparent; border-radius: 3px !important; color: #F0EDE8; }
+    .dk-nacht .mk-check.sel { border-color: #C9927A; background: rgba(201,146,122,0.1); }
+    .dk-nacht .mk-check .ci { color: #C9927A; }
+    .dk-nacht .mk-check .co { color: #3A3A3E; }
+    .dk-nacht .mk-upload { border-color: #C9927A !important; background: rgba(201,146,122,0.05) !important; border-radius: 3px !important; }
+    .dk-nacht .mk-upload-txt { color: #5A5860 !important; }
+    .dk-nacht .mk-thumb { border-color: #2E2E32 !important; border-radius: 3px !important; }
+    .dk-nacht .mk-tile { background: #232325 !important; border-color: transparent !important; border-radius: 3px !important; color: #5A5860 !important; }
+    .dk-nacht .mk-tile.sel { border-color: #C9927A !important; background: rgba(201,146,122,0.1) !important; color: #D4A090 !important; }
+    .dk-nacht .mk-pill { background: #232325 !important; border-color: transparent !important; border-radius: 3px !important; color: #5A5860 !important; }
+    .dk-nacht .mk-pill.sel { border-color: #C9927A !important; background: rgba(201,146,122,0.1) !important; color: #D4A090 !important; }
+
+    /* ── Sage – hell, rund, serifenlos ── */
+    .dk-sage { background: #EEF3EB !important; }
+    .mk.dk-sage { border-radius: 22px !important; box-shadow: 0 20px 50px rgba(80,110,80,0.18) !important; }
+    .dk-sage .mk-bar { background: linear-gradient(90deg,#7A9E7E,#5A8460) !important; border-radius: 0 !important; }
+    .dk-sage .mk-logo { color: #5A8460 !important; font-family: 'Inter', sans-serif !important; font-weight: 700 !important; letter-spacing: -0.01em !important; font-size: 11px !important; text-transform: none !important; }
+    .dk-sage .mk-step { color: #A0B8A0 !important; }
+    .dk-sage .mk-title { color: #1E3020 !important; font-family: 'Inter', sans-serif !important; font-weight: 500 !important; font-size: 17px !important; }
+    .dk-sage .mk-sub { color: #7A9870 !important; }
+    .dk-sage .mk-lbl { color: #7A9870 !important; }
+    .dk-sage .mk-field { border-radius: 10px !important; border-color: #C8DCC4 !important; background: #fff !important; }
+    .dk-sage .mk-field.sel { border-color: #7A9E7E !important; background: rgba(122,158,126,0.08) !important; color: #3A6A40 !important; }
+    .dk-sage .mk-field.filled { border-color: #7A9E7E !important; }
+    .dk-sage .mk-check { border-radius: 10px !important; border-color: #C8DCC4 !important; background: #fff !important; }
+    .dk-sage .mk-check.sel { border-color: #7A9E7E; background: rgba(122,158,126,0.09); color: #1E3020; border-radius: 10px !important; }
+    .dk-sage .mk-check .ci { color: #7A9E7E; }
+    .dk-sage .mk-tile { border-radius: 10px !important; border-color: #C8DCC4 !important; background: #fff !important; }
+    .dk-sage .mk-tile.sel { border-color: #7A9E7E !important; background: rgba(122,158,126,0.09) !important; color: #2A5A30 !important; border-radius: 10px !important; }
+    .dk-sage .mk-pill { border-radius: 10px !important; border-color: #C8DCC4 !important; background: #fff !important; }
+    .dk-sage .mk-pill.sel { border-color: #7A9E7E !important; background: rgba(122,158,126,0.09) !important; color: #2A5A30 !important; border-radius: 10px !important; }
+    .dk-sage .mk-upload { border-color: #7A9E7E !important; background: rgba(122,158,126,0.04) !important; border-radius: 10px !important; }
+
     /* ── Mockup-Karten ── */
     .mockup-grid {
       display: grid;
@@ -759,56 +825,29 @@
 
       <div class="pain-cards">
         <div class="pain-card">
-          <div class="pain-icon">📬</div>
+          <div class="pain-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          </div>
           <div class="pain-quote">"Was kostet das?"</div>
           <h3>Mehr nicht.</h3>
           <p>Kein Datum, kein Budget, keine Location, keine Vorstellung. Du weißt nicht mal ob das Brautpaar ernsthaft sucht.</p>
         </div>
         <div class="pain-card">
-          <div class="pain-icon">🔄</div>
+          <div class="pain-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.4 0 4.6.9 6.3 2.5"/><polyline points="21 3 21 9 15 9"/></svg>
+          </div>
           <div class="pain-quote">"Können Sie mir sagen, wie groß die Hochzeit ist?"</div>
           <h3>Du fragst 5× nach.</h3>
           <p>Bis alle relevanten Infos zusammen sind, hast du drei E-Mail-Runden hinter dir – und die Energie ist raus.</p>
         </div>
         <div class="pain-card">
-          <div class="pain-icon">💸</div>
+          <div class="pain-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="2"/></svg>
+          </div>
           <div class="pain-quote">"Passt das Budget überhaupt?"</div>
           <h3>Du weißt es nicht.</h3>
           <p>Bis du rausfindest was das Brautpaar ausgeben will, hast du schon eine Stunde investiert. Oft endet es mit: "Das ist uns leider zu teuer."</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── How it works ── -->
-  <section class="how-it-works">
-    <div class="container">
-      <div class="eyebrow">Die Lösung</div>
-      <h2>Ich richte alles ein.<br><em>Du fotografierst.</em></h2>
-      <p class="section-lead">
-        Kein technisches Wissen nötig. Du bekommst einen fertigen Button für deine Website – fertig.
-      </p>
-
-      <div class="steps-grid">
-        <div class="how-step">
-          <div class="how-step-num">1</div>
-          <h3>Kurzes Gespräch</h3>
-          <p>Wir klären in 15 Minuten, was du brauchst – Stil, Farben, welche Fragen du den Brautpaaren stellen willst.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-step-num">2</div>
-          <h3>Ich richte ein</h3>
-          <p>Ich baue das Anfrage-Widget für dich – passend zu deiner Website, mit deinen Daten. Du musst nichts anfassen.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-step-num">3</div>
-          <h3>Brautpaare füllen aus – du bekommst das Briefing</h3>
-          <p>Deine Kunden durchlaufen ein geführtes Formular. Du bekommst ein vollständiges Briefing per E-Mail – sofort.</p>
-        </div>
-      </div>
-      <div style="max-width:640px;margin:56px auto 0;text-align:center;padding:40px;background:var(--white);border:1px solid var(--grey-border);border-radius:16px;">
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--dark);margin-bottom:14px;">Du siehst sofort ob es passt.</h3>
-        <p style="font-size:16px;color:var(--grey-mid);line-height:1.7;">Budget, Datum, Vorstellung – alles da bevor du antwortest. Kein Blindflug mehr. Kein unangenehmes Preisgespräch nach drei E-Mail-Runden.</p>
       </div>
     </div>
   </section>
@@ -818,9 +857,15 @@
     <div class="container">
       <div class="eyebrow" style="color:var(--champagne);">So erlebt es das Brautpaar</div>
       <h2 style="color:var(--ivory);">6 Schritte. <em>Alles drin.</em></h2>
-      <p class="section-lead" style="color:rgba(250,247,242,0.45);margin-bottom:56px;">Kein Freitextfeld am Anfang, keine Verwirrung – das Brautpaar wählt, klickt, tippt. Du bekommst alles was du brauchst.</p>
+      <p class="section-lead" style="color:rgba(250,247,242,0.45);margin-bottom:48px;">Kein Freitextfeld am Anfang, keine Verwirrung – das Brautpaar wählt, klickt, tippt. Du bekommst alles was du brauchst.</p>
 
-      <div class="mockup-grid">
+      <div class="design-tabs">
+        <button class="design-tab active" data-design="champagne" onclick="switchDesign('champagne')">✦ Champagne</button>
+        <button class="design-tab" data-design="nacht" onclick="switchDesign('nacht')">Nacht</button>
+        <button class="design-tab" data-design="sage" onclick="switchDesign('sage')">Sage</button>
+      </div>
+
+      <div class="mockup-grid" id="design-mockups">
 
         <!-- Mockup A: Leistungen -->
         <div class="mk">
@@ -835,9 +880,9 @@
 
             <span class="mk-lbl">Foto &amp; Video</span>
             <div class="mk-media">
-              <div class="mk-tile">📷<br>Nur Fotos</div>
-              <div class="mk-tile sel">📷🎬<br>Fotos + Video</div>
-              <div class="mk-tile">🎬<br>Nur Video</div>
+              <div class="mk-tile">Nur<br>Fotos</div>
+              <div class="mk-tile sel">Fotos +<br>Video</div>
+              <div class="mk-tile">Nur<br>Video</div>
             </div>
 
             <span class="mk-lbl">Getting Ready dabei?</span>
@@ -970,7 +1015,7 @@
             <div class="brf-row"><span class="brf-k">Gästezahl</span><span class="brf-v">80–100</span></div>
             <div class="brf-row"><span class="brf-k">Stil</span><span class="brf-v">Fine Art · Dark &amp; Moody · Romantisch</span></div>
             <div class="brf-row"><span class="brf-k">In Worten</span><span class="brf-v">„Ruhige, dunkle Töne mit weichen Lichtern. Lieber echte Momente als zu viel Inszenierung."</span></div>
-            <div class="brf-row"><span class="brf-k">Inspirationsbilder</span><span class="brf-v">📎 2 Bilder hochgeladen</span></div>
+            <div class="brf-row"><span class="brf-k">Inspirationsbilder</span><span class="brf-v">2 Bilder (Anhang)</span></div>
           </div>
 
           <div class="brf-sec">
@@ -988,6 +1033,39 @@
           </div>
 
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How it works ── -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="eyebrow">Die Lösung</div>
+      <h2>Ich richte alles ein.<br><em>Du fotografierst.</em></h2>
+      <p class="section-lead">
+        Kein technisches Wissen nötig. Du bekommst einen fertigen Button für deine Website – fertig.
+      </p>
+
+      <div class="steps-grid">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <h3>Kurzes Gespräch</h3>
+          <p>Wir klären in 15 Minuten, was du brauchst – Stil, Farben, welche Fragen du den Brautpaaren stellen willst.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <h3>Ich richte ein</h3>
+          <p>Ich baue das Anfrage-Widget für dich – passend zu deiner Website, mit deinen Daten. Du musst nichts anfassen.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <h3>Brautpaare füllen aus – du bekommst das Briefing</h3>
+          <p>Deine Kunden durchlaufen ein geführtes Formular. Du bekommst ein vollständiges Briefing per E-Mail – sofort.</p>
+        </div>
+      </div>
+      <div style="max-width:640px;margin:56px auto 0;text-align:center;padding:40px;background:var(--white);border:1px solid var(--grey-border);border-radius:16px;">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--dark);margin-bottom:14px;">Du siehst sofort ob es passt.</h3>
+        <p style="font-size:16px;color:var(--grey-mid);line-height:1.7;">Budget, Datum, Vorstellung – alles da bevor du antwortest. Kein Blindflug mehr. Kein unangenehmes Preisgespräch nach drei E-Mail-Runden.</p>
       </div>
     </div>
   </section>
@@ -1029,21 +1107,27 @@
 
           <div class="contact-promise">
             <div class="promise-item">
-              <div class="promise-icon">💬</div>
+              <div class="promise-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
               <div class="promise-text">
                 <strong>Kurzes Erstgespräch</strong>
                 <span>Wir klären alles in 15 Minuten – kein langer Onboarding-Prozess.</span>
               </div>
             </div>
             <div class="promise-item">
-              <div class="promise-icon">⚡</div>
+              <div class="promise-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
               <div class="promise-text">
                 <strong>Schnelle Einrichtung</strong>
                 <span>Dein Widget ist innerhalb von 24 Stunden einsatzbereit.</span>
               </div>
             </div>
             <div class="promise-item">
-              <div class="promise-icon">🔒</div>
+              <div class="promise-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
               <div class="promise-text">
                 <strong>Kein Risiko</strong>
                 <span>Erster Monat kostenlos, danach monatlich kündbar. Kein Vertrag.</span>
@@ -1067,8 +1151,18 @@
               <input class="form-input" type="url" id="cf-website" placeholder="https://deine-fotografie.de">
             </div>
             <div class="form-field">
-              <label class="form-label" for="cf-msg">Kurze Nachricht <span class="req">*</span></label>
-              <textarea class="form-textarea" id="cf-msg" placeholder="Erzähl kurz von dir und deiner Arbeit..." required></textarea>
+              <label class="form-label" for="cf-volume">Wie viele Anfragen bekommst du ca. pro Monat?</label>
+              <select class="form-select" id="cf-volume">
+                <option value="">Bitte wählen …</option>
+                <option>1–5</option>
+                <option>5–15</option>
+                <option>15–30</option>
+                <option>30+</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="cf-msg">Was nervt dich aktuell an Anfragen? <span class="req">*</span></label>
+              <textarea class="form-textarea" id="cf-msg" placeholder="z. B. Die meisten Anfragen kommen ohne Datum, Budget oder Vorstellung – und ich verliere viel Zeit mit Nachfragen bevor ich weiß ob es überhaupt passt." required></textarea>
             </div>
             <button class="form-submit" type="submit">Nachricht senden →</button>
             <p style="margin-top:12px;font-size:12px;color:var(--grey-mid);line-height:1.5;">
@@ -1077,7 +1171,9 @@
             </p>
           </form>
           <div class="form-success" id="form-success">
-            <div class="form-success-icon">🤍</div>
+            <div class="form-success-icon" style="color:var(--champagne);line-height:0;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
             <div style="font-size:22px;font-family:'Cormorant Garamond',serif;margin-bottom:8px;">Vielen Dank!</div>
             <div style="font-size:14px;color:var(--grey-mid);line-height:1.6;">Ich melde mich innerhalb von 24 Stunden bei dir.</div>
           </div>
@@ -1103,6 +1199,16 @@
   </footer>
 
   <script>
+    function switchDesign(design) {
+      document.querySelectorAll('.design-tab').forEach(function(t) { t.classList.remove('active'); });
+      document.querySelector('.design-tab[data-design="' + design + '"]').classList.add('active');
+      document.querySelectorAll('#design-mockups .mk').forEach(function(mk) {
+        mk.classList.remove('dk-nacht', 'dk-sage');
+        if (design === 'nacht') mk.classList.add('dk-nacht');
+        if (design === 'sage') mk.classList.add('dk-sage');
+      });
+    }
+
     function submitContact(e) {
       e.preventDefault();
 
@@ -1110,6 +1216,7 @@
         name: document.getElementById('cf-name').value,
         email: document.getElementById('cf-email').value,
         website: document.getElementById('cf-website').value,
+        volume: document.getElementById('cf-volume').value,
         message: document.getElementById('cf-msg').value,
       };
 
