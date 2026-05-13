@@ -7,7 +7,7 @@
   <meta name="description" content="Deine Kunden liefern dir alles was du brauchst – bevor du auch nur eine E-Mail schreibst. Das smarte Anfrage-Widget für Hochzeitsfotografen.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231A1A1A'/><text x='16' y='22' font-family='Georgia,serif' font-size='14' font-weight='500' fill='%23C9A96E' text-anchor='middle'>ea</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -607,49 +607,106 @@
     .design-tab[data-design="sage"].active      { border-color: #7A9E7E; color: #7A9E7E; background: rgba(122,158,126,0.1); }
     .design-preview { max-width: 360px; margin: 0 auto 72px; }
 
-    /* ── Nacht – dunkel, kantig, Playfair Display ── */
-    .dk-nacht { background: #1A1A1C !important; }
-    .mk.dk-nacht { border-radius: 6px !important; }
-    .dk-nacht .mk-bar { background: #C9927A !important; height: 2px !important; }
-    .dk-nacht .mk-logo { color: #C9927A !important; font-family: 'Playfair Display', serif !important; text-transform: uppercase !important; letter-spacing: 0.2em !important; font-size: 9px !important; }
-    .dk-nacht .mk-step { color: #3A3A3E !important; font-family: 'Inter', sans-serif !important; }
-    .dk-nacht .mk-title { color: #F0EDE8 !important; font-family: 'Playfair Display', serif !important; font-size: 18px !important; letter-spacing: 0.01em !important; }
-    .dk-nacht .mk-sub, .dk-nacht .mk-lbl { color: #4A4850 !important; letter-spacing: 0.12em !important; }
-    .dk-nacht .mk-field { background: #232325 !important; border-color: transparent !important; border-radius: 3px !important; color: #F0EDE8 !important; }
-    .dk-nacht .mk-field.sel { border-color: #C9927A !important; background: rgba(201,146,122,0.1) !important; color: #D4A090 !important; }
-    .dk-nacht .mk-field.filled { border-color: #C9927A !important; background: #232325 !important; color: #F0EDE8 !important; }
-    .dk-nacht .mk-check { background: #232325; border-color: transparent; border-radius: 3px !important; color: #F0EDE8; }
-    .dk-nacht .mk-check.sel { border-color: #C9927A; background: rgba(201,146,122,0.1); }
-    .dk-nacht .mk-check .ci { color: #C9927A; }
-    .dk-nacht .mk-check .co { color: #3A3A3E; }
-    .dk-nacht .mk-upload { border-color: #C9927A !important; background: rgba(201,146,122,0.05) !important; border-radius: 3px !important; }
-    .dk-nacht .mk-upload-txt { color: #5A5860 !important; }
-    .dk-nacht .mk-thumb { border-color: #2E2E32 !important; border-radius: 3px !important; }
-    .dk-nacht .mk-tile { background: #232325 !important; border-color: transparent !important; border-radius: 3px !important; color: #5A5860 !important; }
-    .dk-nacht .mk-tile.sel { border-color: #C9927A !important; background: rgba(201,146,122,0.1) !important; color: #D4A090 !important; }
-    .dk-nacht .mk-pill { background: #232325 !important; border-color: transparent !important; border-radius: 3px !important; color: #5A5860 !important; }
-    .dk-nacht .mk-pill.sel { border-color: #C9927A !important; background: rgba(201,146,122,0.1) !important; color: #D4A090 !important; }
+    /* ── NACHT: Editorial schwarz, eckig, Playfair italic, Terrakotta ── */
+    .mk.dk-nacht { background: #080808 !important; border-radius: 0 !important; box-shadow: 0 30px 80px rgba(0,0,0,0.8) !important; }
+    .dk-nacht .mk-bar { background: #C9927A !important; height: 1px !important; }
+    .dk-nacht .mk-logo { color: #C9927A !important; font-family: 'Playfair Display', serif !important; font-style: italic !important; letter-spacing: 0.01em !important; font-size: 12px !important; font-weight: 400 !important; text-transform: none !important; }
+    .dk-nacht .mk-step { color: #2A2A2A !important; }
+    .dk-nacht .mk-title { color: #F0EDE8 !important; font-family: 'Playfair Display', serif !important; font-style: italic !important; font-size: 20px !important; font-weight: 400 !important; }
+    .dk-nacht .mk-sub { color: #2E2E2E !important; }
+    .dk-nacht .mk-lbl { color: #333 !important; letter-spacing: 0.14em !important; }
+    .dk-nacht .mk-field { background: transparent !important; border-top: none !important; border-left: none !important; border-right: none !important; border-bottom: 1px solid #222 !important; border-radius: 0 !important; color: #F0EDE8 !important; padding-left: 0 !important; }
+    .dk-nacht .mk-field.sel { border-bottom-color: #C9927A !important; color: #C9927A !important; background: transparent !important; }
+    .dk-nacht .mk-field.filled { border-bottom-color: #C9927A !important; }
+    .dk-nacht .mk-check { background: transparent !important; border: none !important; border-left: 2px solid #1C1C1C !important; border-radius: 0 !important; color: #333 !important; }
+    .dk-nacht .mk-check.sel { border-left-color: #C9927A !important; color: #F0EDE8 !important; background: rgba(201,146,122,0.06) !important; }
+    .dk-nacht .mk-check .ci { color: #C9927A !important; }
+    .dk-nacht .mk-check .co { color: #222 !important; }
+    .dk-nacht .mk-upload { border-color: #1C1C1C !important; background: transparent !important; border-radius: 0 !important; }
+    .dk-nacht .mk-upload-txt { color: #333 !important; }
+    .dk-nacht .mk-thumb { border-color: #1C1C1C !important; border-radius: 0 !important; }
+    .dk-nacht .mk-tile { background: transparent !important; border: 1px solid #1C1C1C !important; border-radius: 0 !important; color: #333 !important; }
+    .dk-nacht .mk-tile.sel { border-color: #C9927A !important; background: rgba(201,146,122,0.08) !important; color: #C9927A !important; }
+    .dk-nacht .mk-pill { background: transparent !important; border: 1px solid #1C1C1C !important; border-radius: 0 !important; color: #333 !important; }
+    .dk-nacht .mk-pill.sel { border-color: #C9927A !important; background: rgba(201,146,122,0.08) !important; color: #C9927A !important; }
+    .dk-nacht .mk-nav { background: #080808 !important; border-top-color: #1C1C1C !important; }
+    .dk-nacht .mk-btn-primary { background: #C9927A !important; color: #080808 !important; border-radius: 0 !important; font-weight: 700 !important; text-transform: uppercase !important; font-size: 9px !important; letter-spacing: 0.1em !important; }
+    .dk-nacht .mk-btn-ghost { color: #2A2A2A !important; border-color: #1C1C1C !important; border-radius: 0 !important; }
+    .dk-nacht .mk-nav-step { color: #1C1C1C !important; }
 
-    /* ── Sage – hell, rund, serifenlos ── */
-    .dk-sage { background: #EEF3EB !important; }
-    .mk.dk-sage { border-radius: 22px !important; box-shadow: 0 20px 50px rgba(80,110,80,0.18) !important; }
-    .dk-sage .mk-bar { background: linear-gradient(90deg,#7A9E7E,#5A8460) !important; border-radius: 0 !important; }
-    .dk-sage .mk-logo { color: #5A8460 !important; font-family: 'Inter', sans-serif !important; font-weight: 700 !important; letter-spacing: -0.01em !important; font-size: 11px !important; text-transform: none !important; }
-    .dk-sage .mk-step { color: #A0B8A0 !important; }
-    .dk-sage .mk-title { color: #1E3020 !important; font-family: 'Inter', sans-serif !important; font-weight: 500 !important; font-size: 17px !important; }
-    .dk-sage .mk-sub { color: #7A9870 !important; }
-    .dk-sage .mk-lbl { color: #7A9870 !important; }
-    .dk-sage .mk-field { border-radius: 10px !important; border-color: #C8DCC4 !important; background: #fff !important; }
-    .dk-sage .mk-field.sel { border-color: #7A9E7E !important; background: rgba(122,158,126,0.08) !important; color: #3A6A40 !important; }
-    .dk-sage .mk-field.filled { border-color: #7A9E7E !important; }
-    .dk-sage .mk-check { border-radius: 10px !important; border-color: #C8DCC4 !important; background: #fff !important; }
-    .dk-sage .mk-check.sel { border-color: #7A9E7E; background: rgba(122,158,126,0.09); color: #1E3020; border-radius: 10px !important; }
-    .dk-sage .mk-check .ci { color: #7A9E7E; }
-    .dk-sage .mk-tile { border-radius: 10px !important; border-color: #C8DCC4 !important; background: #fff !important; }
-    .dk-sage .mk-tile.sel { border-color: #7A9E7E !important; background: rgba(122,158,126,0.09) !important; color: #2A5A30 !important; border-radius: 10px !important; }
-    .dk-sage .mk-pill { border-radius: 10px !important; border-color: #C8DCC4 !important; background: #fff !important; }
-    .dk-sage .mk-pill.sel { border-color: #7A9E7E !important; background: rgba(122,158,126,0.09) !important; color: #2A5A30 !important; border-radius: 10px !important; }
-    .dk-sage .mk-upload { border-color: #7A9E7E !important; background: rgba(122,158,126,0.04) !important; border-radius: 10px !important; }
+    /* ── SAGE: Organisch, Pill-Formen, Salbeigrün ── */
+    .mk.dk-sage { background: #F2F7F0 !important; border-radius: 28px !important; box-shadow: 0 24px 60px rgba(60,100,60,0.2) !important; }
+    .dk-sage .mk-bar { background: linear-gradient(90deg,#5A8460,#8AB890) !important; height: 6px !important; border-radius: 6px !important; }
+    .dk-sage .mk-logo { color: #3D6B44 !important; font-family: 'Inter', sans-serif !important; font-weight: 800 !important; letter-spacing: -0.01em !important; font-size: 12px !important; text-transform: none !important; }
+    .dk-sage .mk-step { color: #AACAAA !important; }
+    .dk-sage .mk-title { color: #1A2E1C !important; font-family: 'Inter', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; }
+    .dk-sage .mk-sub { color: #6A9070 !important; }
+    .dk-sage .mk-lbl { color: #7AAA7E !important; font-size: 11px !important; letter-spacing: 0.01em !important; text-transform: none !important; }
+    .dk-sage .mk-field { border-radius: 50px !important; border: 2px solid #D0E4CC !important; background: #fff !important; color: #1A2E1C !important; padding-left: 14px !important; }
+    .dk-sage .mk-field.sel { border-color: #5A8460 !important; background: rgba(90,132,96,0.08) !important; color: #1A2E1C !important; }
+    .dk-sage .mk-field.filled { border-color: #5A8460 !important; }
+    .dk-sage .mk-check { border-radius: 50px !important; border: 2px solid #D0E4CC !important; background: #fff !important; color: #5A7A5E !important; }
+    .dk-sage .mk-check.sel { border-color: #5A8460 !important; background: rgba(90,132,96,0.1) !important; color: #1A2E1C !important; }
+    .dk-sage .mk-check .ci { color: #5A8460 !important; }
+    .dk-sage .mk-tile { border-radius: 20px !important; border: 2px solid #D0E4CC !important; background: #fff !important; color: #5A7A5E !important; }
+    .dk-sage .mk-tile.sel { border-color: #5A8460 !important; background: #5A8460 !important; color: #fff !important; }
+    .dk-sage .mk-pill { border-radius: 50px !important; border: 2px solid #D0E4CC !important; background: #fff !important; color: #5A7A5E !important; }
+    .dk-sage .mk-pill.sel { border-color: #5A8460 !important; background: #5A8460 !important; color: #fff !important; }
+    .dk-sage .mk-upload { border-color: #D0E4CC !important; background: rgba(90,132,96,0.04) !important; border-radius: 16px !important; }
+    .dk-sage .mk-nav { background: #F2F7F0 !important; border-top-color: #D0E4CC !important; }
+    .dk-sage .mk-btn-primary { background: #3D6B44 !important; color: #fff !important; border-radius: 50px !important; }
+    .dk-sage .mk-btn-ghost { color: #7AAA7E !important; border: 2px solid #D0E4CC !important; border-radius: 50px !important; }
+    .dk-sage .mk-nav-step { color: #AACAAA !important; }
+
+    /* ── CLEAN: Ultra-minimal, weiß, Unterlinie, Ghost-Button ── */
+    .mk.dk-clean { background: #FFFFFF !important; border-radius: 2px !important; box-shadow: 0 4px 30px rgba(0,0,0,0.1) !important; }
+    .dk-clean .mk-bar { background: #000 !important; height: 2px !important; border-radius: 0 !important; }
+    .dk-clean .mk-logo { color: #AAAAAA !important; font-family: 'DM Mono', monospace, sans-serif !important; font-size: 9px !important; font-weight: 400 !important; text-transform: lowercase !important; letter-spacing: 0.04em !important; }
+    .dk-clean .mk-step { color: #DDDDDD !important; font-family: 'DM Mono', monospace, sans-serif !important; font-size: 9px !important; }
+    .dk-clean .mk-title { color: #000 !important; font-family: 'Inter', sans-serif !important; font-weight: 300 !important; font-size: 22px !important; letter-spacing: -0.03em !important; }
+    .dk-clean .mk-sub { color: #AAAAAA !important; font-size: 10px !important; }
+    .dk-clean .mk-lbl { color: #CCCCCC !important; font-size: 8px !important; font-family: 'DM Mono', monospace, sans-serif !important; letter-spacing: 0.12em !important; }
+    .dk-clean .mk-field { background: transparent !important; border-top: none !important; border-left: none !important; border-right: none !important; border-bottom: 1px solid #E8E8E8 !important; border-radius: 0 !important; color: #000 !important; padding-left: 0 !important; }
+    .dk-clean .mk-field.sel { border-bottom-color: #000 !important; background: transparent !important; color: #000 !important; }
+    .dk-clean .mk-field.filled { border-bottom-color: #000 !important; }
+    .dk-clean .mk-check { background: transparent !important; border: 1px solid #EBEBEB !important; border-radius: 0 !important; color: #888 !important; font-size: 9px !important; }
+    .dk-clean .mk-check.sel { border-color: #000 !important; color: #000 !important; background: transparent !important; }
+    .dk-clean .mk-check .ci { color: #000 !important; }
+    .dk-clean .mk-tile { background: transparent !important; border: 1px solid #EBEBEB !important; border-radius: 0 !important; color: #888 !important; }
+    .dk-clean .mk-tile.sel { border-color: #000 !important; background: #000 !important; color: #fff !important; }
+    .dk-clean .mk-pill { background: transparent !important; border: 1px solid #EBEBEB !important; border-radius: 0 !important; color: #888 !important; }
+    .dk-clean .mk-pill.sel { border-color: #000 !important; background: #000 !important; color: #fff !important; }
+    .dk-clean .mk-upload { border-color: #EBEBEB !important; background: transparent !important; border-radius: 0 !important; }
+    .dk-clean .mk-upload-txt { color: #BBBBBB !important; }
+    .dk-clean .mk-nav { background: #fff !important; border-top-color: #F0F0F0 !important; }
+    .dk-clean .mk-btn-primary { background: transparent !important; color: #000 !important; border: 1px solid #000 !important; border-radius: 0 !important; font-weight: 400 !important; text-transform: uppercase !important; font-size: 9px !important; letter-spacing: 0.1em !important; }
+    .dk-clean .mk-btn-ghost { color: #CCC !important; border: 1px solid #E8E8E8 !important; border-radius: 0 !important; }
+    .dk-clean .mk-nav-step { color: #DDD !important; font-family: 'DM Mono', monospace, sans-serif !important; }
+
+    /* ── MODERN: Navy, Outfit Bold, Coral, Pill-Formen ── */
+    .mk.dk-modern { background: #0D1B2A !important; border-radius: 24px !important; box-shadow: 0 36px 90px rgba(0,0,0,0.6) !important; }
+    .dk-modern .mk-bar { background: #FF5757 !important; height: 5px !important; border-radius: 5px !important; }
+    .dk-modern .mk-logo { color: #FF5757 !important; font-family: 'Outfit', sans-serif !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 0.18em !important; font-size: 9px !important; }
+    .dk-modern .mk-step { color: #1A2B3C !important; }
+    .dk-modern .mk-title { color: #FFFFFF !important; font-family: 'Outfit', sans-serif !important; font-weight: 800 !important; font-size: 20px !important; letter-spacing: -0.02em !important; }
+    .dk-modern .mk-sub { color: #2A3B4C !important; }
+    .dk-modern .mk-lbl { color: #2A3B4C !important; font-family: 'Outfit', sans-serif !important; font-weight: 600 !important; text-transform: uppercase !important; font-size: 9px !important; }
+    .dk-modern .mk-field { background: #1A2B3C !important; border: none !important; border-radius: 50px !important; color: #fff !important; padding-left: 14px !important; }
+    .dk-modern .mk-field.sel { border: 2px solid #FF5757 !important; background: rgba(255,87,87,0.1) !important; color: #FF5757 !important; border-radius: 50px !important; }
+    .dk-modern .mk-field.filled { border: 2px solid #FF5757 !important; }
+    .dk-modern .mk-check { background: #1A2B3C !important; border: none !important; border-radius: 50px !important; color: #2A3B4C !important; }
+    .dk-modern .mk-check.sel { border: 2px solid #FF5757 !important; background: rgba(255,87,87,0.12) !important; color: #fff !important; border-radius: 50px !important; }
+    .dk-modern .mk-check .ci { color: #FF5757 !important; }
+    .dk-modern .mk-tile { background: #1A2B3C !important; border: none !important; border-radius: 16px !important; color: #2A3B4C !important; }
+    .dk-modern .mk-tile.sel { border: 2px solid #FF5757 !important; background: rgba(255,87,87,0.12) !important; color: #FF5757 !important; border-radius: 16px !important; }
+    .dk-modern .mk-pill { background: #1A2B3C !important; border: none !important; border-radius: 50px !important; color: #2A3B4C !important; }
+    .dk-modern .mk-pill.sel { background: #FF5757 !important; color: #fff !important; border-radius: 50px !important; font-weight: 700 !important; }
+    .dk-modern .mk-upload { border-color: #1A2B3C !important; background: rgba(255,87,87,0.04) !important; border-radius: 16px !important; }
+    .dk-modern .mk-upload-txt { color: #2A3B4C !important; }
+    .dk-modern .mk-nav { background: #0D1B2A !important; border-top-color: #1A2B3C !important; }
+    .dk-modern .mk-btn-primary { background: #FF5757 !important; color: #fff !important; border-radius: 50px !important; font-family: 'Outfit', sans-serif !important; font-weight: 800 !important; text-transform: uppercase !important; font-size: 9px !important; letter-spacing: 0.1em !important; }
+    .dk-modern .mk-btn-ghost { color: #1A2B3C !important; border: 2px solid #1A2B3C !important; border-radius: 50px !important; }
+    .dk-modern .mk-nav-step { color: #1A2B3C !important; }
 
     /* ── Mockup-Karten ── */
     .mockup-grid {
@@ -735,6 +792,34 @@
       border: 1.5px solid #E2DDD6;
     }
     .mk-upload-txt { font-size: 10px; color: #8A8580; line-height: 1.4; }
+
+    /* ── Mockup Nav ── */
+    .mk-nav {
+      padding: 10px 18px;
+      border-top: 1px solid #EDE8E0;
+      display: flex; justify-content: space-between; align-items: center;
+      background: #FAF7F2;
+    }
+    .mk-btn {
+      font-size: 10px; font-weight: 600;
+      padding: 6px 13px; border-radius: 6px; border: none; cursor: default;
+      font-family: 'Inter', sans-serif;
+    }
+    .mk-btn-primary { background: #1A1A1A; color: #FAF7F2; }
+    .mk-btn-ghost { background: transparent; color: #8A8580; border: 1.5px solid #E2DDD6; }
+    .mk-nav-step { font-size: 9px; color: #B0A898; }
+
+    /* Nacht nav */
+    .dk-nacht .mk-nav { background: #1A1A1C; border-top-color: #2E2E30; }
+    .dk-nacht .mk-btn-primary { background: #C9927A; color: #1A1A1C; border-radius: 3px; font-weight: 700; }
+    .dk-nacht .mk-btn-ghost { color: #5A5A5E; border-color: #2E2E30; border-radius: 3px; border-style: solid; }
+    .dk-nacht .mk-nav-step { color: #3A3A3E; }
+
+    /* Sage nav */
+    .dk-sage .mk-nav { background: #EEF3EB; border-top-color: #C8DCC4; }
+    .dk-sage .mk-btn-primary { background: #5A8460; color: #fff; border-radius: 10px; }
+    .dk-sage .mk-btn-ghost { color: #7A9A7E; border-color: #C8DCC4; border-radius: 10px; border-style: solid; }
+    .dk-sage .mk-nav-step { color: #AACAAA; }
 
     /* ── Briefing-Karte ── */
     .briefing-wrap { max-width: 560px; margin: 0 auto; }
@@ -860,9 +945,11 @@
       <p class="section-lead" style="color:rgba(250,247,242,0.45);margin-bottom:48px;">Kein Freitextfeld am Anfang, keine Verwirrung – das Brautpaar wählt, klickt, tippt. Du bekommst alles was du brauchst.</p>
 
       <div class="design-tabs">
-        <button class="design-tab active" data-design="champagne" onclick="switchDesign('champagne')">✦ Champagne</button>
+        <button class="design-tab active" data-design="champagne" onclick="switchDesign('champagne')">Champagne</button>
         <button class="design-tab" data-design="nacht" onclick="switchDesign('nacht')">Nacht</button>
         <button class="design-tab" data-design="sage" onclick="switchDesign('sage')">Sage</button>
+        <button class="design-tab" data-design="clean" onclick="switchDesign('clean')">Clean</button>
+        <button class="design-tab" data-design="modern" onclick="switchDesign('modern')">Modern</button>
       </div>
 
       <div class="mockup-grid" id="design-mockups">
@@ -907,6 +994,11 @@
               <div class="mk-pill">Noch unklar</div>
             </div>
           </div>
+          <div class="mk-nav">
+            <button class="mk-btn mk-btn-ghost">← Zurück</button>
+            <span class="mk-nav-step">3 / 6</span>
+            <button class="mk-btn mk-btn-primary">Weiter →</button>
+          </div>
         </div>
 
         <!-- Mockup B: Stil & Stimmung -->
@@ -944,6 +1036,11 @@
               <div class="mk-upload-txt">2 Bilder hochgeladen ✓</div>
             </div>
           </div>
+          <div class="mk-nav">
+            <button class="mk-btn mk-btn-ghost">← Zurück</button>
+            <span class="mk-nav-step">4 / 6</span>
+            <button class="mk-btn mk-btn-primary">Weiter →</button>
+          </div>
         </div>
 
         <!-- Mockup C: Budget & Wünsche -->
@@ -962,6 +1059,11 @@
 
             <span class="mk-lbl">Besondere Wünsche</span>
             <div class="mk-field filled" style="line-height:1.6;">Wir haben zwei Locations – bitte beide einplanen. Gruppenbilder mit beiden Familien sind wichtig, am besten direkt nach der Trauung.</div>
+          </div>
+          <div class="mk-nav">
+            <button class="mk-btn mk-btn-ghost">← Zurück</button>
+            <span class="mk-nav-step">5 / 6</span>
+            <button class="mk-btn mk-btn-primary">Weiter →</button>
           </div>
         </div>
 
@@ -1203,9 +1305,8 @@
       document.querySelectorAll('.design-tab').forEach(function(t) { t.classList.remove('active'); });
       document.querySelector('.design-tab[data-design="' + design + '"]').classList.add('active');
       document.querySelectorAll('#design-mockups .mk').forEach(function(mk) {
-        mk.classList.remove('dk-nacht', 'dk-sage');
-        if (design === 'nacht') mk.classList.add('dk-nacht');
-        if (design === 'sage') mk.classList.add('dk-sage');
+        mk.classList.remove('dk-nacht', 'dk-sage', 'dk-clean', 'dk-modern');
+        if (design !== 'champagne') mk.classList.add('dk-' + design);
       });
     }
 

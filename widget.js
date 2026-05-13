@@ -28,6 +28,7 @@
     apiUrl:
       currentScript.getAttribute('data-api') ||
       scriptOrigin + '/api/submissions',
+    theme: currentScript.getAttribute('data-theme') || 'champagne',
   };
 
   // ──────────────────────────────────────────────────────────────────────────
@@ -241,7 +242,7 @@
       color: #9A7A3E; font-weight: 600;
     }
     .media-item input[type="radio"] { display: none; }
-    .media-icon { font-size: 22px; line-height: 1; }
+    .media-icon { display: flex; align-items: center; justify-content: center; }
 
     /* "Noch unklar" toggle */
     .unclear-row {
@@ -394,6 +395,241 @@
       .radio-group { flex-direction: column; }
       .media-group { grid-template-columns: 1fr; }
     }
+  `;
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // THEME OVERRIDES
+  // ──────────────────────────────────────────────────────────────────────────
+
+  // Nacht: dunkel, Playfair Display, scharfe Kanten, Terrakotta-Akzent
+  const THEME_CSS_NACHT = `
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+    .overlay { background: rgba(0,0,0,0.82); }
+
+    .modal {
+      background: #1A1A1C;
+      border-radius: 6px;
+      box-shadow: 0 28px 80px rgba(0,0,0,0.7);
+    }
+    .overlay.visible .modal { transform: translateY(0) scale(1); }
+
+    .progress-bar { background: #2E2E30; }
+    .progress-fill { background: #C9927A; }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 9px;
+      color: #C9927A;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-weight: 400;
+    }
+    .close-btn { color: #6A6A6E; }
+    .close-btn:hover { background: #2A2A2E; color: #F0EDE8; }
+
+    .modal-content {
+      scrollbar-color: #C9927A transparent;
+    }
+    .modal-content::-webkit-scrollbar-thumb { background: #C9927A; }
+
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      color: #F0EDE8;
+      font-size: 28px;
+    }
+    .step-subtitle { color: #6A6A6E; }
+    .field-label { color: #5A5A5E; }
+    .field-label .req { color: #C9927A; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      background: #232325;
+      border-color: transparent;
+      border-radius: 3px;
+      color: #F0EDE8;
+    }
+    input::placeholder, textarea::placeholder { color: #454548; }
+    input:focus, select:focus, textarea:focus { border-color: #C9927A; }
+    input.err, select.err { border-color: #C4917A; }
+
+    .check-item {
+      background: #232325;
+      border-color: transparent;
+      border-radius: 3px;
+      color: #C8C5BF;
+    }
+    .check-item:hover { border-color: #C9927A; background: #2A2A2E; }
+    .check-item.checked { border-color: #C9927A; background: rgba(201,146,122,0.12); color: #F0EDE8; }
+    .check-item input[type="checkbox"] { accent-color: #C9927A; }
+
+    .radio-item {
+      background: #232325;
+      border-color: transparent;
+      border-radius: 3px;
+      color: #C8C5BF;
+    }
+    .radio-item:hover { border-color: #C9927A; background: #2A2A2E; }
+    .radio-item.checked { border-color: #C9927A; background: rgba(201,146,122,0.12); color: #C9927A; }
+
+    .media-item {
+      background: #232325;
+      border-color: transparent;
+      border-radius: 3px;
+      color: #C8C5BF;
+    }
+    .media-item:hover { border-color: #C9927A; background: #2A2A2E; }
+    .media-item.checked { border-color: #C9927A; background: rgba(201,146,122,0.12); color: #C9927A; }
+
+    .unclear-row span { color: #5A5A5E; }
+    .unclear-row input[type="checkbox"] { accent-color: #C9927A; }
+
+    .upload-area {
+      border-color: #2E2E30;
+      border-radius: 3px;
+    }
+    .upload-area:hover { border-color: #C9927A; background: #232325; }
+    .upload-area.has-files { border-color: #C9927A; background: rgba(201,146,122,0.06); }
+    .upload-label { color: #5A5A5E; }
+    .upload-label strong { color: #F0EDE8; }
+
+    .divider { background: #2E2E30; }
+
+    .welcome-icon { background: rgba(201,146,122,0.12); }
+    .feature-list li { color: #6A6A6E; }
+    .feature-list li::before { color: #C9927A; }
+
+    .modal-nav {
+      border-top-color: #2E2E30;
+      background: #1A1A1C;
+    }
+    .btn-primary { background: #C9927A; color: #1A1A1C; border-radius: 3px; font-weight: 700; }
+    .btn-primary:hover { background: #E0A98E; }
+    .btn-primary:disabled:hover { background: #C9927A; }
+    .btn-ghost { color: #5A5A5E; border-color: #2E2E30; border-radius: 3px; }
+    .btn-ghost:hover { color: #F0EDE8; border-color: #5A5A5E; }
+    .step-counter { color: #3A3A3E; }
+
+    .thankyou-icon { background: rgba(201,146,122,0.12); }
+    .summary-card { background: #232325; border-color: #2E2E30; }
+    .summary-card-title { color: #5A5A5E; }
+    .summary-row { border-bottom-color: #2A2A2E; }
+    .summary-label { color: #5A5A5E; }
+    .summary-value { color: #F0EDE8; }
+  `;
+
+  // Sage: hell grün, Inter sans-serif, stark abgerundet, luftig
+  const THEME_CSS_SAGE = `
+    .overlay { background: rgba(30,48,32,0.65); }
+
+    .modal {
+      background: #EEF3EB;
+      border-radius: 22px;
+      box-shadow: 0 28px 70px rgba(80,110,80,0.22);
+    }
+
+    .progress-bar { background: #C8DCC4; }
+    .progress-fill { background: linear-gradient(90deg, #5A8460 0%, #7AAF80 100%); }
+
+    .logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #5A8460;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .close-btn { color: #8AAA8A; }
+    .close-btn:hover { background: #D4E8D0; color: #1E3020; }
+
+    .modal-content { scrollbar-color: #5A8460 transparent; }
+    .modal-content::-webkit-scrollbar-thumb { background: #5A8460; }
+
+    .step-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #1E3020;
+    }
+    .step-subtitle { color: #5A7A5E; }
+    .field-label { color: #7A9A7E; }
+    .field-label .req { color: #5A8460; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      background: #fff;
+      border-color: #C8DCC4;
+      border-radius: 10px;
+      color: #1E3020;
+    }
+    input::placeholder, textarea::placeholder { color: #AACAAA; }
+    input:focus, select:focus, textarea:focus { border-color: #5A8460; }
+    input.err, select.err { border-color: #C07060; }
+
+    .check-item {
+      background: #fff;
+      border-color: #C8DCC4;
+      border-radius: 10px;
+      color: #1E3020;
+    }
+    .check-item:hover { border-color: #5A8460; background: #F4FAF4; }
+    .check-item.checked { border-color: #5A8460; background: rgba(90,132,96,0.08); }
+    .check-item input[type="checkbox"] { accent-color: #5A8460; }
+
+    .radio-item {
+      background: #fff;
+      border-color: #C8DCC4;
+      border-radius: 10px;
+      color: #1E3020;
+    }
+    .radio-item:hover { border-color: #5A8460; background: #F4FAF4; }
+    .radio-item.checked { border-color: #5A8460; background: rgba(90,132,96,0.08); color: #3A6040; }
+
+    .media-item {
+      background: #fff;
+      border-color: #C8DCC4;
+      border-radius: 10px;
+      color: #1E3020;
+    }
+    .media-item:hover { border-color: #5A8460; background: #F4FAF4; }
+    .media-item.checked { border-color: #5A8460; background: rgba(90,132,96,0.08); color: #3A6040; }
+
+    .unclear-row span { color: #7A9A7E; }
+    .unclear-row input[type="checkbox"] { accent-color: #5A8460; }
+
+    .upload-area { border-color: #C8DCC4; border-radius: 10px; }
+    .upload-area:hover { border-color: #5A8460; background: #F4FAF4; }
+    .upload-area.has-files { border-color: #5A8460; background: rgba(90,132,96,0.05); }
+    .upload-label { color: #7A9A7E; }
+    .upload-label strong { color: #1E3020; }
+
+    .divider { background: #C8DCC4; }
+
+    .welcome-icon { background: rgba(90,132,96,0.1); border-radius: 14px; }
+    .feature-list li { color: #5A7A5E; }
+    .feature-list li::before { color: #5A8460; }
+
+    .modal-nav { border-top-color: #C8DCC4; background: #EEF3EB; }
+    .btn-primary { background: #5A8460; color: #fff; border-radius: 10px; }
+    .btn-primary:hover { background: #3A6040; }
+    .btn-primary:disabled:hover { background: #5A8460; }
+    .btn-ghost { color: #7A9A7E; border-color: #C8DCC4; border-radius: 10px; }
+    .btn-ghost:hover { color: #1E3020; border-color: #5A8460; }
+    .step-counter { color: #AACAAA; }
+
+    .thankyou-icon { background: rgba(90,132,96,0.1); border-radius: 14px; }
+    .summary-card { background: #fff; border-color: #C8DCC4; border-radius: 14px; }
+    .summary-card-title { color: #7A9A7E; }
+    .summary-row { border-bottom-color: #EEF3EB; }
+    .summary-label { color: #7A9A7E; }
+    .summary-value { color: #1E3020; }
   `;
 
   // ──────────────────────────────────────────────────────────────────────────
@@ -558,17 +794,17 @@
           <div class="media-group" id="ea-media-type">
             <label class="media-item">
               <input type="radio" name="mediaType" value="Nur Fotos">
-              <span class="media-icon">📷</span>
+              <span class="media-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
               <span>Nur Fotos</span>
             </label>
             <label class="media-item">
               <input type="radio" name="mediaType" value="Fotos + Video">
-              <span class="media-icon">📷&thinsp;🎬</span>
+              <span class="media-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="3"/><polygon points="17,10 22,7 22,17 17,14" fill="currentColor" stroke="none" style="transform:scale(0.5) translate(14px,6px)"/></svg></span>
               <span>Fotos + Video</span>
             </label>
             <label class="media-item">
               <input type="radio" name="mediaType" value="Nur Video">
-              <span class="media-icon">🎬</span>
+              <span class="media-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="23,7 16,12 23,17 23,7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></span>
               <span>Nur Video</span>
             </label>
           </div>
@@ -775,6 +1011,16 @@
     const style = d.createElement('style');
     style.textContent = SHADOW_CSS;
     shadowRoot.appendChild(style);
+
+    if (CONFIG.theme === 'nacht') {
+      const themeStyle = d.createElement('style');
+      themeStyle.textContent = THEME_CSS_NACHT;
+      shadowRoot.appendChild(themeStyle);
+    } else if (CONFIG.theme === 'sage') {
+      const themeStyle = d.createElement('style');
+      themeStyle.textContent = THEME_CSS_SAGE;
+      shadowRoot.appendChild(themeStyle);
+    }
 
     overlay = d.createElement('div');
     overlay.className = 'overlay';
