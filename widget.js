@@ -29,6 +29,8 @@
       currentScript.getAttribute('data-api') ||
       scriptOrigin + '/api/submissions',
     theme: currentScript.getAttribute('data-theme') || 'champagne',
+    // 'email' = nur E-Mail | 'dashboard' = nur Dashboard | 'both' = beides (Standard)
+    delivery: currentScript.getAttribute('data-delivery') || 'both',
   };
 
   // ──────────────────────────────────────────────────────────────────────────
@@ -790,8 +792,8 @@
         <div class="welcome-icon">${ICON_CAMERA}</div>
         <h2 class="step-title">Herzlich<br>willkommen!</h2>
         <p class="step-subtitle">
-          Damit wir dir das perfekte Angebot erstellen können, haben wir<br>
-          ein paar Fragen – dauert nur <strong>3 Minuten</strong>.
+          Damit wir euch und eure Vorstellungen für euren besonderen Tag<br>
+          kennenlernen – ein paar Fragen, dauert nur <strong>3 Minuten</strong>.
         </p>
         <ul class="feature-list">
           <li>Alle Angaben auch als "noch unklar" beantwortbar</li>
@@ -912,6 +914,11 @@
             <label class="radio-item"><input type="radio" name="multiLocation" value="Nein"> Nein</label>
             <label class="radio-item"><input type="radio" name="multiLocation" value="Noch unklar"> Noch unklar</label>
           </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="ea-location-address">Adresse(n) der Location(s) <span style="font-weight:400;text-transform:none;letter-spacing:0;opacity:0.6;">(optional)</span></label>
+          <textarea id="ea-location-address" name="locationAddress" rows="3" placeholder="z. B. Schloss Nymphenburg, Schlossrondell 1, 80638 München&#10;Bei mehreren Locations einfach untereinander eintragen."></textarea>
         </div>
       </div>
 
@@ -1172,12 +1179,11 @@
     backBtn.addEventListener('click', function () { if (currentStep > 2) goToStep(currentStep - 1, true); });
     nextBtn.addEventListener('click', handleNext);
 
-    // Check-item interactivity
+    // Check-item interactivity — use 'change' to avoid double-toggle from wrapping label
     shadowRoot.querySelectorAll('.check-grid').forEach(function (grid) {
       grid.querySelectorAll('.check-item').forEach(function (item) {
         var cb = item.querySelector('input[type="checkbox"]');
-        item.addEventListener('click', function (e) {
-          if (e.target !== cb) cb.checked = !cb.checked;
+        cb.addEventListener('change', function () {
           item.classList.toggle('checked', cb.checked);
         });
       });
@@ -1187,9 +1193,8 @@
     shadowRoot.querySelectorAll('.radio-group').forEach(function (group) {
       group.querySelectorAll('.radio-item').forEach(function (item) {
         var radio = item.querySelector('input[type="radio"]');
-        item.addEventListener('click', function () {
+        radio.addEventListener('change', function () {
           group.querySelectorAll('.radio-item').forEach(function (ri) { ri.classList.remove('checked'); });
-          radio.checked = true;
           item.classList.add('checked');
         });
       });
@@ -1200,9 +1205,8 @@
     if (mediaGroup) {
       mediaGroup.querySelectorAll('.media-item').forEach(function (item) {
         var radio = item.querySelector('input[type="radio"]');
-        item.addEventListener('click', function () {
+        radio.addEventListener('change', function () {
           mediaGroup.querySelectorAll('.media-item').forEach(function (mi) { mi.classList.remove('checked'); });
-          radio.checked = true;
           item.classList.add('checked');
         });
       });
@@ -1412,6 +1416,7 @@
     return {
       photographerEmail: CONFIG.photographerEmail,
       photographerName:  CONFIG.photographerName,
+      delivery:          CONFIG.delivery,
       wedding: {
         date:         dateUnclear ? null : (dateEl.value || null),
         dateUnclear:  dateUnclear,
@@ -1424,6 +1429,7 @@
         types:             locationTypes,
         indoorOutdoor:     getVal('indoorOutdoor'),
         multipleLocations: getVal('multiLocation'),
+        address:           shadowRoot.getElementById('ea-location-address').value.trim() || null,
       },
       services: {
         mediaType:         getVal('mediaType'),
