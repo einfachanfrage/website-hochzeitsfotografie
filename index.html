@@ -275,6 +275,41 @@
 
     .form-submit:hover { background: var(--champagne); }
 
+    .calendly-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      background: var(--champagne);
+      color: var(--dark);
+      border-radius: 9px;
+      text-decoration: none;
+      transition: background 0.18s;
+      margin-bottom: 4px;
+    }
+    .calendly-btn:hover { background: #b8934a; }
+
+    .contact-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+      color: var(--grey-mid);
+      font-size: 13px;
+    }
+    .contact-divider::before,
+    .contact-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(26,26,26,0.12);
+    }
+
     .form-success {
       display: none;
       text-align: center;
@@ -1459,6 +1494,14 @@
         </div>
 
         <div class="contact-form" id="contact-form-wrap">
+
+          <a href="https://calendly.com/einfachanfrage/15min" target="_blank" rel="noopener" class="calendly-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            15-Minuten-Termin buchen
+          </a>
+
+          <div class="contact-divider"><span>oder Nachricht schreiben</span></div>
+
           <form id="contact-form" onsubmit="submitContact(event)">
             <div class="form-field">
               <label class="form-label" for="cf-name">Dein Name <span class="req">*</span></label>
