@@ -910,6 +910,8 @@
       .contact-grid { grid-template-columns: 1fr; }
       .contact-info { order: -1; }
       .mockup-grid { grid-template-columns: 1fr; }
+      .insta-grid { grid-template-columns: 1fr !important; }
+      .insta-grid > div:first-child { order: -1; }
     }
 
     @media (max-width: 560px) {
@@ -1423,6 +1425,75 @@
     </div>
   </section>
 
+  <!-- ── Kein Website nötig ── -->
+  <section style="background:var(--dark);padding:100px 5vw;">
+    <div class="container">
+      <div class="eyebrow" style="color:var(--champagne);">Auch ohne eigene Website</div>
+      <h2 style="color:var(--ivory);">Nur Instagram?<br><em>Kein Problem.</em></h2>
+      <p class="section-lead" style="color:rgba(250,247,242,0.45);margin-bottom:56px;">Du bekommst eine eigene Seite unter <strong style="color:var(--champagne);">einfachanfrage.de/p/deinname</strong> – die du einfach in deine Instagram-Bio packst. Brautpaare tippen drauf, das Formular öffnet sich. Fertig.</p>
+
+      <div class="insta-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:760px;margin:0 auto;align-items:center;">
+
+        <!-- Phone mockup -->
+        <div style="text-align:center;">
+          <div style="display:inline-block;background:#1E1E1E;border-radius:36px;padding:14px;box-shadow:0 30px 80px rgba(0,0,0,0.6);border:2px solid #2E2E2E;">
+            <div style="width:200px;background:#111;border-radius:24px;overflow:hidden;">
+              <!-- Instagram bio mock -->
+              <div style="background:#111;padding:20px 16px 0;">
+                <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#C9A96E,#8A6A3A);margin:0 auto 10px;"></div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:14px;color:#FAF7F2;text-align:center;margin-bottom:4px;">Sandra Vogt Foto</div>
+                <div style="font-size:10px;color:rgba(250,247,242,0.4);text-align:center;margin-bottom:12px;line-height:1.4;">📸 Hochzeitsfotografie<br>München & deutschlandweit</div>
+                <div style="background:rgba(201,169,110,0.15);border:1px solid rgba(201,169,110,0.3);border-radius:8px;padding:8px 12px;text-align:center;margin-bottom:14px;">
+                  <div style="font-size:9px;color:rgba(250,247,242,0.4);margin-bottom:2px;">🔗 Anfrage stellen</div>
+                  <div style="font-size:10px;color:#C9A96E;font-family:monospace;">einfachanfrage.de/p/sandravogt</div>
+                </div>
+              </div>
+              <div style="background:#1A1A1A;padding:16px;text-align:center;">
+                <div style="font-family:'Cormorant Garamond',serif;font-size:16px;color:#FAF7F2;margin-bottom:6px;">Sandra Vogt Fotografie</div>
+                <div style="font-size:10px;color:rgba(250,247,242,0.4);margin-bottom:16px;">Stell deine Hochzeitsanfrage – in 3 Minuten.</div>
+                <div style="background:#C9A96E;color:#1A1A1A;font-size:11px;font-weight:700;padding:9px 20px;border-radius:7px;display:inline-block;">Anfrage stellen →</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div>
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:36px;height:36px;border-radius:50%;background:rgba(201,169,110,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#C9A96E;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              </div>
+              <div>
+                <div style="font-size:14px;font-weight:600;color:#FAF7F2;margin-bottom:3px;">Eigene URL für dich</div>
+                <div style="font-size:13px;color:rgba(250,247,242,0.45);line-height:1.5;">einfachanfrage.de/p/<em style="color:#C9A96E;">deinname</em> – dein persönlicher Anfrage-Link.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:36px;height:36px;border-radius:50%;background:rgba(201,169,110,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#C9A96E;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div>
+                <div style="font-size:14px;font-weight:600;color:#FAF7F2;margin-bottom:3px;">Kein Code, keine Website nötig</div>
+                <div style="font-size:13px;color:rgba(250,247,242,0.45);line-height:1.5;">Der Link funktioniert sofort auf jedem Gerät – perfekt für die Instagram-Bio.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:36px;height:36px;border-radius:50%;background:rgba(201,169,110,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#C9A96E;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              </div>
+              <div>
+                <div style="font-size:14px;font-weight:600;color:#FAF7F2;margin-bottom:3px;">Mit Website auch kombinierbar</div>
+                <div style="font-size:13px;color:rgba(250,247,242,0.45);line-height:1.5;">Website vorhanden? Du kannst beides nutzen – Button auf der Website und Link in der Bio.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ── Pricing ── -->
   <section class="pricing">
     <div class="container">
@@ -1435,6 +1506,7 @@
 
         <ul class="price-features">
           <li>Einrichtung komplett übernommen – du machst nichts</li>
+          <li>Eigene Seite unter einfachanfrage.de/p/deinname – für Instagram-Bio oder überall</li>
           <li>Widget in 5 Designs, passend zu deiner Website</li>
           <li>Vollständiges Briefing per E-Mail + PDF-Anhang</li>
           <li>Brautpaar bekommt automatisch eine Bestätigung</li>
